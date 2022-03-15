@@ -6,7 +6,7 @@
 class Persoana
 {
     public:
-        Persoana(); //constructor implicit
+        Persoana(); //constructor implicit //folosit de clasa ContBancar
         Persoana(std::string nume, std::string prenume, std::string dob); //constructor cu parametrii
         Persoana(Persoana& other); // constructor de copiere
         virtual ~Persoana();
@@ -16,7 +16,8 @@ class Persoana
 
     private:
         std::string nume, prenume, dob; //dob = date of birth
-
+        static int nextID_Persoana;
+        const int ID_Persoana;
 
 };
 
