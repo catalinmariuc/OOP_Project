@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1647336271 source:e:\asus\de pe d\laboratoare programare\oop_project\src\persoana.cpp
+	"Persoana.h"
+
+1647336271 e:\asus\de pe d\laboratoare programare\oop_project\include\persoana.h
+	<string>
+
+1647336283 source:e:\asus\de pe d\laboratoare programare\oop_project\main.cpp
+	<iostream>
+	"Persoana.h"
+
