@@ -6,14 +6,17 @@
 
 int main()
 {
-    try
+    Persoana p("mariuc-rebenciuc", "catalin", "09.07.1999");
+    std::cout<<p;
+    char a='a';
+    std::cout<<(char)(a-32);
+    /*try
     {
         throw Exceptie("Test", "Test");
-        getch();
     }
     catch(Exceptie e)
     {
         std::cerr<<e;
-    }
+    }*/
     return 0;
 }

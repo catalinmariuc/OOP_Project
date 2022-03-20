@@ -3,6 +3,7 @@
 #include<string>
 #include<iostream>
 
+//Clasa pentru tratarea exceptiilor
 class Exceptie
 {
     public:
