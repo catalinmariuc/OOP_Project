@@ -15,6 +15,24 @@ ContBancar::ContBancar(Persoana& this_persoana, std::string tip, std::string val
 
 }
 
+std::ostream& operator<<(std::ostream& o, ContBancar c)
+{
+    o<<c.ID_ContBancar<<". "<<c.tip<<" "<<c.sold<<c.valuta;
+    return o;
+}
+
+int ContBancar::depune_numerar(int valoare)
+{
+    sold+=valoare;
+    return valoare;
+}
+
+int ContBancar::retrage_numerar(int valoare)
+{
+    sold-=valoare;
+    return valoare;
+}
+
 ContBancar::~ContBancar()
 {
     //dtor

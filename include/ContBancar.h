@@ -16,7 +16,9 @@ class ContBancar : public Persoana
 
     public:
         ContBancar(Persoana& this_persoana, std::string denumire, std::string valuta, unsigned long long int sold);//constructor cu parametrii
-
+        int depune_numerar(int valoare);
+        int retrage_numerar(int valoare);
+        friend std::ostream& operator<<(std::ostream& o, ContBancar c);
         virtual ~ContBancar();
 
     protected:

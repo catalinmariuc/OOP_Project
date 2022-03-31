@@ -6,10 +6,11 @@
 
 int main()
 {
-    Persoana p("mariuc-rebenciuc", "catalin", "09.07.1999");
-    std::cout<<p;
-    char a='a';
-    std::cout<<(char)(a-32);
+    Persoana p("popescu-popa", "ion alexandru", "09.07.1999");
+    Persoana pers("popa,andrei,09.07.1999", ',');
+    Persoana pers2("Mariuc,catalin,09.07.1999");
+
+    std::cout<<p<<std::endl<<pers<<std::endl<<pers2;
     /*try
     {
         throw Exceptie("Test", "Test");

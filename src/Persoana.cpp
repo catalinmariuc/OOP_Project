@@ -11,6 +11,48 @@ Persoana::Persoana():ID_Persoana(nextID_Persoana++)
 
 Persoana::Persoana(std::string nume, std::string prenume, std::string dob) : nume(nume), prenume(prenume), dob(dob), ID_Persoana(nextID_Persoana++)
 {
+    tratare_exceptii_nume_prenume();
+}
+
+
+Persoana::Persoana(Persoana& other) : nume(other.nume), prenume(other.prenume), dob(other.dob), ID_Persoana(other.ID_Persoana)
+{
+
+}
+
+Persoana::Persoana(std::string str, char del): ID_Persoana(nextID_Persoana++)
+{
+    std::string temp = "";
+    std::string date[3];
+    int c=0;
+    for(int i=0; i<(int)str.size(); i++)
+    {
+        if(str[i] != del)
+        {
+            temp += str[i];
+        }
+        else
+        {
+            date[c]=temp;
+            c++;
+            temp = "";
+        }
+    }
+    date[c]=temp;
+    nume=date[0];
+    prenume=date[1];
+    dob=date[2];
+    tratare_exceptii_nume_prenume();
+}
+
+std::ostream& operator<<(std::ostream& o, Persoana p)
+{
+    o<<p.ID_Persoana<<". "<<p.nume<<" "<<p.prenume<<" "<<p.dob;
+    return o;
+}
+
+void Persoana::tratare_exceptii_nume_prenume()
+{
     //de completat pentru exceptii(nume format incorect, data nasterii format incorect)
     //tratarea cazului in care numele incepe cu litera mica
     std::size_t sep_pos = 0;
@@ -35,20 +77,10 @@ Persoana::Persoana(std::string nume, std::string prenume, std::string dob) : num
         if(int(this->prenume[sep_pos+1])>=97 && int(this->prenume[sep_pos+1]<=122))
             this->prenume[sep_pos+1]-=32;
     }
+
+    //tratarea cazului in care data nasterii nu este de forma ZZ.LL.AAAA
+    //ACEST CAZ TREBUIE TRATAT LA CITIRE + CAND AVEM CARACTERE DIFERITE DE LITERE IN NUME
 }
-
-
-Persoana::Persoana(Persoana& other) : nume(other.nume), prenume(other.prenume), dob(other.dob), ID_Persoana(other.ID_Persoana)
-{
-
-}
-
-std::ostream& operator<<(std::ostream& o, Persoana p)
-{
-    o<<p.ID_Persoana<<". "<<p.nume<<" "<<p.prenume<<" "<<p.dob<<"\n";
-    return o;
-}
-
 Persoana::~Persoana()
 {
     //dtor
