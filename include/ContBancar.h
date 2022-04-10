@@ -1,10 +1,10 @@
 #ifndef CONTBANCAR_H
 #define CONTBANCAR_H
 
-#include <Persoana.h>
+#include <Client.h>
 
 
-class ContBancar : public Persoana
+class ContBancar : public Client
 {
     private:
         ContBancar();//constructor implicit // nu ar trebui sa fie folosit in afara clasei
@@ -15,7 +15,7 @@ class ContBancar : public Persoana
         static int nextID_ContBancar;
 
     public:
-        ContBancar(Persoana& this_persoana, std::string denumire, std::string valuta, unsigned long long int sold);//constructor cu parametrii
+        ContBancar(Client& this_client, std::string denumire, std::string valuta, unsigned long long int sold);//constructor cu parametrii
         int depune_numerar(int valoare);
         int retrage_numerar(int valoare);
         friend std::ostream& operator<<(std::ostream& o, ContBancar c);

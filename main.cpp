@@ -1,23 +1,29 @@
+#define FISIER_PERSOANE "file_persoane.txt"
+
 #include <iostream>
 #include<conio.h>
+#include<fstream>
+
 #include"Persoana.h"
+#include"Client.h"
+#include"Angajat.h"
 #include"ContBancar.h"
 #include"Exceptie.h"
 
+#include"bancaIO.h"
+
 int main()
 {
-    Persoana p("popescu-popa", "ion alexandru", "09.07.1999");
-    Persoana pers("popa,andrei,09.07.1999", ',');
-    Persoana pers2("Mariuc,catalin,09.07.1999");
 
-    std::cout<<p<<std::endl<<pers<<std::endl<<pers2;
-    /*try
+    try
     {
-        throw Exceptie("Test", "Test");
+        Persoana* vector_persoane = get_Persoane_file(FISIER_PERSOANE);
+        afisare_Persoane_console(vector_persoane);
+
     }
     catch(Exceptie e)
     {
         std::cerr<<e;
-    }*/
+    }
     return 0;
 }

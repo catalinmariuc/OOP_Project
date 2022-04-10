@@ -34,10 +34,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="bancaIO.cpp" />
+		<Unit filename="bancaIO.h" />
+		<Unit filename="file_persoane.txt" />
+		<Unit filename="include/Angajat.h" />
+		<Unit filename="include/Client.h" />
 		<Unit filename="include/ContBancar.h" />
 		<Unit filename="include/Exceptie.h" />
 		<Unit filename="include/Persoana.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Angajat.cpp" />
+		<Unit filename="src/Client.cpp" />
 		<Unit filename="src/ContBancar.cpp" />
 		<Unit filename="src/Exceptie.cpp" />
 		<Unit filename="src/Persoana.cpp" />

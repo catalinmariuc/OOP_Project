@@ -45,11 +45,6 @@ Persoana::Persoana(std::string str, char del): ID_Persoana(nextID_Persoana++)
     tratare_exceptii_nume_prenume();
 }
 
-std::ostream& operator<<(std::ostream& o, Persoana p)
-{
-    o<<p.ID_Persoana<<". "<<p.nume<<" "<<p.prenume<<" "<<p.dob;
-    return o;
-}
 
 void Persoana::tratare_exceptii_nume_prenume()
 {
@@ -81,6 +76,20 @@ void Persoana::tratare_exceptii_nume_prenume()
     //tratarea cazului in care data nasterii nu este de forma ZZ.LL.AAAA
     //ACEST CAZ TREBUIE TRATAT LA CITIRE + CAND AVEM CARACTERE DIFERITE DE LITERE IN NUME
 }
+
+std::istream& operator>>(std::istream& i, Persoana& pers)
+{
+    i>>pers.nume>>pers.prenume>>pers.dob;
+    pers.tratare_exceptii_nume_prenume();
+    return i;
+}
+
+std::ostream& operator<<(std::ostream& o, Persoana& pers)
+{
+    o<<pers.nume<<' '<<pers.prenume<<", data nasterii: "<<pers.dob;
+    return o;
+}
+
 Persoana::~Persoana()
 {
     //dtor
